@@ -57,7 +57,6 @@ public class CasasController {
 	@PostMapping("/registro")
 	  public ResponseEntity<Registro> getTutorialInsertarById(@RequestBody Registro registro) {
 		registroRepository.save(registro);
-		System.out.println(registro);
 		return new ResponseEntity<>(registro, HttpStatus.OK);
 	  }
 	
@@ -67,7 +66,6 @@ public class CasasController {
 		registroEncontrado.get().setNombre(registro.getNombre());
 		registroEncontrado.get().setApellido(registro.getApellido());
 		registroEncontrado.get().setPresupuesto(registro.getPresupuesto());
-		System.out.println(registroEncontrado.get());
 		return new ResponseEntity<>(registroRepository.save(registroEncontrado.get()), HttpStatus.OK);
 	  }
 
